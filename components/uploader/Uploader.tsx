@@ -64,7 +64,7 @@ export default function Uploader({setFile}: UploaderProps) {
 					<p>Drag & Drop your image here</p>
 				</div>
 			</label>
-			<button className="upload-button" onClick={onButtonClick}>
+			<button className="btn btn-primary" onClick={onButtonClick}>
 				Choose a file
 			</button>
 			{dragActive && (
