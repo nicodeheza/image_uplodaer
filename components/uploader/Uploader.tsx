@@ -1,4 +1,6 @@
+import Image from "next/image";
 import {useRef, useState, Dispatch, SetStateAction} from "react";
+import styles from "./Uploader.module.css";
 
 export interface UploaderProps {
 	setFile: Dispatch<SetStateAction<undefined>>;
@@ -45,8 +47,10 @@ export default function Uploader({setFile}: UploaderProps) {
 			onDragEnter={handleDrag}
 			onSubmit={(e) => e.preventDefault()}
 			title="Image form"
+			className={styles.formCard}
 		>
 			<h1>Upload your image</h1>
+			<p>File should be Jpeg, Png,...</p>
 			<input
 				ref={inputRef}
 				type="file"
@@ -55,18 +59,14 @@ export default function Uploader({setFile}: UploaderProps) {
 				onChange={handleChange}
 				title="file input"
 			/>
-			<label
-				id="label-file-upload"
-				htmlFor="input-file-upload"
-				className={dragActive ? "drag-active" : ""}
-			>
+			<label id="label-file-upload" htmlFor="input-file-upload">
 				<div>
+					<Image width={114.13} height={88.24} src="/image.svg" alt="image" />
 					<p>Drag & Drop your image here</p>
 				</div>
 			</label>
-			<button className="btn btn-primary" onClick={onButtonClick}>
-				Choose a file
-			</button>
+			<p>Or</p>
+			<button onClick={onButtonClick}>Choose a file</button>
 			{dragActive && (
 				<div
 					id="drag-file-element"

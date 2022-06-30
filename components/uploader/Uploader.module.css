@@ -1,0 +1,11 @@
+.formCard {
+	background: #ffffff;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	max-width: 402px;
+	max-height: 469px;
+}
+
+.formCard input {
+	display: none;
+}

@@ -9,8 +9,12 @@ const Home: NextPage = () => {
 	const [file, setFile] = useState();
 	return (
 		<div
-			className="d-flex justify-content-center align-items-center"
-			style={{height: "100vh"}}
+			style={{
+				height: "100vh",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center"
+			}}
 		>
 			<Uploader setFile={setFile} />
 		</div>
