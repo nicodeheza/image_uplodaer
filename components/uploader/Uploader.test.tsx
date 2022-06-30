@@ -1,5 +1,6 @@
 import Uploader, {UploaderProps} from "./Uploader";
 import {fireEvent, render} from "@testing-library/react";
+import renderer from "react-test-renderer";
 
 describe("Uploader component", () => {
 	it("update setFile when image is drag and drop to the D&D container", () => {
@@ -35,5 +36,27 @@ describe("Uploader component", () => {
 		expect(setFile.mock.calls.length).toBe(1);
 		expect(setFile.mock.calls[0]).toEqual(files);
 	});
-	it("snapshot", () => {});
+	it("if trying to upload non-image file, alert user", () => {
+		const setFile = jest.fn();
+		const files = [new File(["(⌐□_□)"], "chucknorris.html", {type: "text/html"})];
+		const {getByText, getByTitle} = render(<Uploader setFile={setFile} />);
+		const input = getByTitle("file input");
+		const saveAlert = window.alert;
+		window.alert = jest.fn();
+
+		fireEvent.change(input, {
+			target: {
+				files
+			}
+		});
+
+		expect(setFile.mock.calls.length).toBe(0);
+		expect(window.alert).toHaveBeenCalled();
+		window.alert = saveAlert;
+	});
+	it("snapshot", () => {
+		const setFile = jest.fn();
+		const tree = renderer.create(<Uploader setFile={setFile} />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
 });

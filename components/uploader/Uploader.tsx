@@ -11,6 +11,13 @@ export default function Uploader({setFile}: UploaderProps) {
 
 	const inputRef = useRef<null | HTMLInputElement>(null);
 
+	function isImage(fileType: string) {
+		const regEx = /^image\/+[\w\W]+/;
+		const is = regEx.test(fileType);
+		if (!is) alert("Only image files are accepted");
+		return is;
+	}
+
 	const handleDrag = function (e: any) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -26,15 +33,20 @@ export default function Uploader({setFile}: UploaderProps) {
 		e.stopPropagation();
 		setDragActive(false);
 		if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-			// handleFiles(e.dataTransfer.files);
-			setFile(e.dataTransfer.files[0]);
+			const fileType = e.dataTransfer.files[0].type;
+			if (isImage(fileType)) {
+				setFile(e.dataTransfer.files[0]);
+			}
 		}
 	};
 
 	const handleChange = function (e: any) {
 		e.preventDefault();
 		if (e.target.files && e.target.files[0]) {
-			setFile(e.target.files[0]);
+			const fileType = e.target.files[0].type;
+			if (isImage(fileType)) {
+				setFile(e.target.files[0]);
+			}
 		}
 	};
 	const onButtonClick = () => {
@@ -50,7 +62,7 @@ export default function Uploader({setFile}: UploaderProps) {
 			className={styles.formCard}
 		>
 			<h1>Upload your image</h1>
-			<p>File should be Jpeg, Png,...</p>
+			<p className={styles.primaryText}>File should be Jpeg, Png,...</p>
 			<input
 				ref={inputRef}
 				type="file"
@@ -58,14 +70,18 @@ export default function Uploader({setFile}: UploaderProps) {
 				multiple={true}
 				onChange={handleChange}
 				title="file input"
+				accept="image/*"
 			/>
 			<label id="label-file-upload" htmlFor="input-file-upload">
-				<div>
-					<Image width={114.13} height={88.24} src="/image.svg" alt="image" />
-					<p>Drag & Drop your image here</p>
+				<div
+					className={styles.dropView}
+					style={dragActive ? {border: "solid 1px red"} : {}}
+				>
+					<Image width={114.13} height={88.24} src="/image.svg" alt="image" priority />
+					<p className={styles.secondaryText}>Drag & Drop your image here</p>
 				</div>
 			</label>
-			<p>Or</p>
+			<p className={styles.secondaryText + " " + styles.or}>Or</p>
 			<button onClick={onButtonClick}>Choose a file</button>
 			{dragActive && (
 				<div
@@ -75,6 +91,7 @@ export default function Uploader({setFile}: UploaderProps) {
 					onDragLeave={handleDrag}
 					onDragOver={handleDrag}
 					onDrop={handleDrop}
+					className={styles.drop}
 				></div>
 			)}
 		</form>

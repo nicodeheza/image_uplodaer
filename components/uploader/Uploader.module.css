@@ -1,11 +1,58 @@
 .formCard {
+	position: relative;
+	width: 80vw;
+	height: 80vh;
 	background: #ffffff;
 	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 	border-radius: 12px;
 	max-width: 402px;
 	max-height: 469px;
+	text-align: center;
+	padding: 36px 32px;
+}
+.formCard h1 {
+	margin-top: 0px;
+}
+
+.dropView {
+	width: 100%;
+	height: 100vh;
+	max-width: 338px;
+	max-height: 218.9px;
+	background-color: #f6f8fb;
+	border: 1px dashed #97bef4;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin-top: 29.62px;
+}
+
+.drop {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+
+.or {
+	margin-top: 19px;
+	margin-bottom: 21.62px;
 }
 
 .formCard input {
 	display: none;
+}
+.primaryText {
+	color: var(--secondary-text-color);
+	font-size: 10px;
+	font-weight: 500;
+}
+.secondaryText {
+	color: var(--tertiary-text-color);
+	font-size: 12px;
+	font-weight: 500;
 }
