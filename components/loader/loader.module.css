@@ -22,7 +22,6 @@
 	border-radius: 8px;
 	width: 30%;
 	height: 100%;
-	/* transform: translateX(-100%); */
 	animation: progress 1.5s linear infinite;
 }
 @keyframes progress {

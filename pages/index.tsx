@@ -2,6 +2,7 @@ import type {NextPage} from "next";
 import {useEffect, useState} from "react";
 import Uploader from "../components/uploader/Uploader";
 import Loader from "../components/loader/Loader";
+import ImageCard from "../components/imageCard/ImageCard";
 
 const Home: NextPage = () => {
 	const [file, setFile] = useState();
@@ -18,7 +19,8 @@ const Home: NextPage = () => {
 			}}
 		>
 			{/* <Uploader setFile={setFile} /> */}
-			<Loader />
+			{/* <Loader /> */}
+			<ImageCard imageName="Chuck-Norris.jpg" />
 		</div>
 	);
 };
