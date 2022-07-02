@@ -1,5 +1,6 @@
 import ImageCard from "./ImageCard";
 import {fireEvent, render} from "@testing-library/react";
+import renderer from "react-test-renderer";
 
 Object.assign(navigator, {
 	clipboard: {
@@ -37,5 +38,8 @@ describe("ImageCard component", () => {
 
 		expect(spy).toHaveBeenCalledWith(imageUrl);
 	});
-	it("snapshot", () => {});
+	it("snapshot", () => {
+		const tree = renderer.create(<ImageCard imageName={imageName} />).toJSON();
+		expect(tree).toMatchSnapshot();
+	});
 });

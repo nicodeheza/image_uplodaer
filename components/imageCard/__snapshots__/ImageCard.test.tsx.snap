@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageCard component snapshot 1`] = `
+<div
+  className="imageCard"
+>
+  <div>
+    <svg
+      fill="#219653"
+      height="48"
+      width="48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21.1 32.95 35.05 19l-2.2-2.2L21.1 28.55l-5.95-5.95-2.2 2.2Zm2.9 10.8q-4.05 0-7.65-1.575-3.6-1.575-6.275-4.25Q7.4 35.25 5.825 31.65 4.25 28.05 4.25 24q0-4.1 1.575-7.7 1.575-3.6 4.25-6.275Q12.75 7.35 16.35 5.8q3.6-1.55 7.65-1.55 4.1 0 7.7 1.55 3.6 1.55 6.275 4.225Q40.65 12.7 42.2 16.3q1.55 3.6 1.55 7.7 0 4.05-1.55 7.65-1.55 3.6-4.225 6.275Q35.3 40.6 31.7 42.175 28.1 43.75 24 43.75Z"
+      />
+    </svg>
+  </div>
+  <h1>
+    Uploaded Successfully!
+  </h1>
+  <span
+    style={
+      Object {
+        "background": "none",
+        "border": 0,
+        "boxSizing": "border-box",
+        "display": "inline-block",
+        "height": "initial",
+        "margin": 0,
+        "maxWidth": "100%",
+        "opacity": 1,
+        "overflow": "hidden",
+        "padding": 0,
+        "position": "relative",
+        "width": "initial",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "background": "none",
+          "border": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": "initial",
+          "margin": 0,
+          "maxWidth": "100%",
+          "opacity": 1,
+          "padding": 0,
+          "width": "initial",
+        }
+      }
+    >
+      <img
+        alt=""
+        aria-hidden={true}
+        src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27338%27%20height=%27224.4%27/%3e"
+        style={
+          Object {
+            "background": "none",
+            "border": 0,
+            "display": "block",
+            "height": "initial",
+            "margin": 0,
+            "maxWidth": "100%",
+            "opacity": 1,
+            "padding": 0,
+            "width": "initial",
+          }
+        }
+      />
+    </span>
+    <img
+      alt="loaded Image"
+      data-nimg="intrinsic"
+      decoding="async"
+      onError={[Function]}
+      onLoad={[Function]}
+      src="/_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=750&q=75"
+      srcSet="/_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=384&q=75 1x, /_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=750&q=75 2x"
+      style={
+        Object {
+          "border": "none",
+          "bottom": 0,
+          "boxSizing": "border-box",
+          "display": "block",
+          "height": 0,
+          "left": 0,
+          "margin": "auto",
+          "maxHeight": "100%",
+          "maxWidth": "100%",
+          "minHeight": "100%",
+          "minWidth": "100%",
+          "objectFit": undefined,
+          "objectPosition": undefined,
+          "padding": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "width": 0,
+        }
+      }
+    />
+  </span>
+  <div
+    className="linkContainer"
+  >
+    <div
+      className="urlContainer"
+    >
+      <p>
+        http://localhost/uploads/Chuck-Norris.jpg
+      </p>
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      Copy Link
+    </button>
+  </div>
+</div>
+`;
