@@ -3,7 +3,7 @@ import {useRef, useState, Dispatch, SetStateAction} from "react";
 import styles from "./Uploader.module.css";
 
 export interface UploaderProps {
-	setFile: Dispatch<SetStateAction<undefined>>;
+	setFile: Dispatch<SetStateAction<Blob | undefined>>;
 }
 
 export default function Uploader({setFile}: UploaderProps) {

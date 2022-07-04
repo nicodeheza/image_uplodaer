@@ -33,7 +33,6 @@ const handler = nc<NextApiRequest, NextApiResponse>({
 });
 
 handler.use(upload.single("image")).post((req: reqT, res) => {
-	console.log(req.body);
 	if (req.file !== undefined) {
 		res.status(200).json({fileName: req.file.filename});
 	} else {
