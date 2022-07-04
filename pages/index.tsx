@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 		>
 			{/* <Uploader setFile={setFile} /> */}
 			{/* <Loader /> */}
-			<ImageCard imageName="Chuck-Norris.jpg" />
+			{/* <ImageCard imageName="Chuck-Norris.jpg" /> */}
 		</div>
 	);
 };
