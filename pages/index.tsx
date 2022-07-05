@@ -45,6 +45,13 @@ const Home: NextPage = () => {
 					Link Copied
 				</p>
 			)}
+			<footer>
+				created by{" "}
+				<a href="https://github.com/nicodeheza" target="_blank" rel="noreferrer">
+					nicodeheza
+				</a>{" "}
+				- devChallenges.io
+			</footer>
 		</div>
 	);
 };

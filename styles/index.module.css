@@ -34,3 +34,20 @@
 		transform: translateY(0%);
 	}
 }
+
+.indexContainer footer {
+	font-family: "Montserrat";
+	font-weight: 500;
+	font-size: 14px;
+	color: #a9a9a9;
+	position: absolute;
+	bottom: 24px;
+	left: 0px;
+	width: 100vw;
+	text-align: center;
+}
+
+.indexContainer a {
+	font-weight: bold;
+	text-decoration: underline;
+}
