@@ -1,6 +1,7 @@
 import Index from "../../pages/index";
 import {fireEvent, render, waitFor} from "@testing-library/react";
 import {act} from "react-dom/test-utils";
+import renderer from "react-test-renderer";
 
 Object.assign(navigator, {
 	clipboard: {
@@ -122,5 +123,9 @@ describe("Index Component", () => {
 		expect(uploader).toBeTruthy();
 
 		expect(window.alert).toHaveBeenCalledWith("An error occurred");
+	});
+	it("snapshot", () => {
+		const tree = renderer.create(<Index />).toJSON();
+		expect(tree).toMatchSnapshot();
 	});
 });
