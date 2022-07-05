@@ -4,6 +4,7 @@ import Uploader from "../components/uploader/Uploader";
 import Loader from "../components/loader/Loader";
 import ImageCard from "../components/imageCard/ImageCard";
 import styles from "../styles/index.module.css";
+import Head from "next/head";
 
 const Home: NextPage = () => {
 	const [file, setFile] = useState<Blob>();
@@ -32,27 +33,33 @@ const Home: NextPage = () => {
 		}
 	}, [file]);
 	return (
-		<div className={styles.indexContainer}>
-			{!file && !imageName ? (
-				<Uploader setFile={setFile} />
-			) : file && !imageName ? (
-				<Loader />
-			) : file && imageName ? (
-				<ImageCard imageName={imageName} setShowCopy={setShowCopy} />
-			) : null}
-			{showCopy && (
-				<p className={styles.copy} onAnimationEnd={() => setShowCopy(false)}>
-					Link Copied
-				</p>
-			)}
-			<footer>
-				created by{" "}
-				<a href="https://github.com/nicodeheza" target="_blank" rel="noreferrer">
-					nicodeheza
-				</a>{" "}
-				- devChallenges.io
-			</footer>
-		</div>
+		<>
+			<Head>
+				<title>Image Uploader</title>
+			</Head>
+
+			<div className={styles.indexContainer}>
+				{!file && !imageName ? (
+					<Uploader setFile={setFile} />
+				) : file && !imageName ? (
+					<Loader />
+				) : file && imageName ? (
+					<ImageCard imageName={imageName} setShowCopy={setShowCopy} />
+				) : null}
+				{showCopy && (
+					<p className={styles.copy} onAnimationEnd={() => setShowCopy(false)}>
+						Link Copied
+					</p>
+				)}
+				<footer>
+					created by{" "}
+					<a href="https://github.com/nicodeheza" target="_blank" rel="noreferrer">
+						nicodeheza
+					</a>{" "}
+					- devChallenges.io
+				</footer>
+			</div>
+		</>
 	);
 };
 
