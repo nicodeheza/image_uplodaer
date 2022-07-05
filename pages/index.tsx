@@ -3,10 +3,12 @@ import {useEffect, useRef, useState} from "react";
 import Uploader from "../components/uploader/Uploader";
 import Loader from "../components/loader/Loader";
 import ImageCard from "../components/imageCard/ImageCard";
+import styles from "../styles/index.module.css";
 
 const Home: NextPage = () => {
 	const [file, setFile] = useState<Blob>();
 	const [imageName, setImageName] = useState<string>();
+	const [showCopy, setShowCopy] = useState(false);
 
 	useEffect(() => {
 		if (file) {
@@ -30,21 +32,19 @@ const Home: NextPage = () => {
 		}
 	}, [file]);
 	return (
-		<div
-			style={{
-				height: "100vh",
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center"
-			}}
-		>
+		<div className={styles.indexContainer}>
 			{!file && !imageName ? (
 				<Uploader setFile={setFile} />
 			) : file && !imageName ? (
 				<Loader />
 			) : file && imageName ? (
-				<ImageCard imageName={imageName} />
+				<ImageCard imageName={imageName} setShowCopy={setShowCopy} />
 			) : null}
+			{showCopy && (
+				<p className={styles.copy} onAnimationEnd={() => setShowCopy(false)}>
+					Link Copied
+				</p>
+			)}
 		</div>
 	);
 };

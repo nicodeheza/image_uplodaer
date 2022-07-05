@@ -1,6 +1,12 @@
 import Index from "../../pages/index";
-import {fireEvent, render} from "@testing-library/react";
+import {fireEvent, render, waitFor} from "@testing-library/react";
 import {act} from "react-dom/test-utils";
+
+Object.assign(navigator, {
+	clipboard: {
+		writeText: () => {}
+	}
+});
 
 describe("Index Component", () => {
 	it("first Uploader must be rendered", () => {
@@ -55,6 +61,42 @@ describe("Index Component", () => {
 		const imageCard = await findByText("Uploaded Successfully!");
 
 		expect(imageCard).toBeTruthy();
+	});
+	it("if imageCard button is clicked render copied message", async () => {
+		const promise = Promise.resolve({
+			json: () => Promise.resolve({fileName: "photo-11111.jpg"})
+		});
+		global.fetch = jest.fn(() => promise) as jest.Mock;
+
+		const clipboardSpy = jest.spyOn(navigator.clipboard, "writeText");
+		const clipPromise = Promise.resolve();
+		clipboardSpy.mockImplementation(() => clipPromise);
+
+		const files = [new File(["(⌐□_□)"], "chucknorris.png", {type: "image/png"})];
+		const {findByText, getByTitle} = render(<Index />);
+		const input = getByTitle("file input");
+
+		fireEvent.change(input, {
+			target: {
+				files
+			}
+		});
+
+		const copyBtn = await findByText("Copy Link");
+		window.alert = jest.fn();
+		expect(copyBtn).toBeTruthy();
+		fireEvent.click(copyBtn);
+		expect(window.alert).toBeCalledTimes(0);
+
+		await act(async () => {
+			await clipPromise;
+		});
+
+		const copyMessage = await findByText("Link Copied");
+
+		expect(copyMessage).toBeTruthy();
+		clipboardSpy.mockReset();
+		clipboardSpy.mockRestore();
 	});
 	it("alert if an error is reponsed and go back to Uploader", async () => {
 		window.alert = jest.fn();

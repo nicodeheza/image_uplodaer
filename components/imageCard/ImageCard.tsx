@@ -1,13 +1,14 @@
 import Image from "next/image";
-import {useLayoutEffect, useState} from "react";
+import {Dispatch, useLayoutEffect, useState, SetStateAction} from "react";
 import CheckIcon from "../icons/CheckIcon";
 import styles from "./imageCard.module.css";
 
 export interface ImageCardProps {
 	imageName: string;
+	setShowCopy: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function ImageCard({imageName}: ImageCardProps) {
+export default function ImageCard({imageName, setShowCopy}: ImageCardProps) {
 	const [imageUrl, setImageUrl] = useState("");
 
 	useLayoutEffect(() => {
@@ -19,6 +20,7 @@ export default function ImageCard({imageName}: ImageCardProps) {
 	async function copyLink(link: string) {
 		try {
 			await navigator.clipboard.writeText(link);
+			setShowCopy(true);
 		} catch (error) {
 			alert("Error copying image url");
 			console.log(error);

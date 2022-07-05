@@ -1,0 +1,36 @@
+.indexContainer {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.copy {
+	position: absolute;
+	font-weight: bolder;
+	color: white;
+	background-color: var(--primary-text-color);
+	border-radius: 8px;
+	padding: 5px 10px;
+	bottom: -90px;
+	left: 50px;
+	border: solid;
+	animation: show 2s ease-in-out;
+}
+
+@keyframes show {
+	0% {
+		transform: translateY(0%);
+	}
+	20% {
+		transform: translateY(-300%);
+	}
+	80% {
+		transform: translateY(-300%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
