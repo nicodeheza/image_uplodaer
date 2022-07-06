@@ -37,6 +37,7 @@ export default function ImageCard({imageName, setShowCopy}: ImageCardProps) {
 				height={224.4}
 				src={`/uploads/${imageName}`}
 				alt="loaded Image"
+				objectFit="contain"
 				priority
 			/>
 			<div className={styles.linkContainer}>
