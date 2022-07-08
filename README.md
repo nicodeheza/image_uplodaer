@@ -8,14 +8,14 @@
 
 <div align="center">
   <h3>
-    <!-- <a href="https://{your-demo-link.your-domain}">
+    <a href="https://nico-deheza-image-uploader.herokuapp.com/">
       Demo
     </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <!-- <span> | </span> -->
+    <!-- <a href="https://{your-url-to-the-solution}">
       Solution
-    </a>
-    <span> | </span> -->
+    </a> -->
+    <span> | </span>
     <a href="https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx">
       Challenge
     </a>
@@ -42,9 +42,7 @@ I built this project to practice TDD. I chose this challenge because it is short
 
 The project is a simple image uploader where you can drop or select an image from your system to save it to the server.
 
-<!-- The project will be deployed on Heroku so if you test it the images that you upload are not going to persist. When the Heroku dynos shut down the images will be lost from the server disk. -->
-
-<!-- The project is deployed on Heroku so if you test it  the images that you upload are not going to persist. When the Heroku dynos shut down the images will be lost from the server disk.  -->
+The project is deployed on Heroku so if you test it the images that you upload are not going to persist. When the Heroku dynos shut down the images will be lost from the server disk.
 
 ### Built With
 
