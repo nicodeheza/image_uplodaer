@@ -1,4 +1,3 @@
-import {NextApiRequest, NextApiResponse} from "next";
 import endpoint from "../../pages/api/upload";
 import type {PageConfig} from "next";
 import fs from "fs";
@@ -16,7 +15,7 @@ handler.config = {
 };
 
 const imagePath = path.join(__dirname, "testImage.jpg");
-const savePath = path.join(__dirname, "../../public/uploads/photo-11111.jpg");
+const savePath = path.join(__dirname, "../../uploads/photo-11111.jpg");
 const nonImageFilePath = path.join(__dirname, "../../package.json");
 
 describe("upload route", () => {

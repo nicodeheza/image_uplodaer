@@ -9,7 +9,7 @@ interface reqT extends NextApiRequest {
 
 const upload = multer({
 	storage: multer.diskStorage({
-		destination: "./public/uploads",
+		destination: "./uploads",
 		filename: (req, file, cb) => {
 			let format: string[] | string = file.originalname.split(".");
 			format = format[format.length - 1];
