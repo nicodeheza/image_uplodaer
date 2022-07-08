@@ -10,7 +10,7 @@ Object.assign(navigator, {
 });
 
 const imageName = "Chuck-Norris.jpg";
-const imageUrlRegExp = /^(http|https):\/\/[\w\W]+\/uploads\/Chuck-Norris.jpg$/;
+const imageUrlRegExp = /^(http|https):\/\/[\w\W]+\/api\/Chuck-Norris.jpg$/;
 
 describe("ImageCard component", () => {
 	let imageUrl: string;
@@ -22,7 +22,7 @@ describe("ImageCard component", () => {
 		const image = getByAltText("loaded Image");
 		const src = image.getAttribute("src");
 
-		const isImage = /(?=.*Chuck-Norris\.jpg)(?=.*uploads).*/.test(src!);
+		const isImage = /(?=.*Chuck-Norris\.jpg)(?=.*api).*/.test(src!);
 		expect(isImage).toBeTruthy();
 	});
 	it("image url must be displayed", () => {

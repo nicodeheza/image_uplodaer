@@ -12,9 +12,7 @@ export default function ImageCard({imageName, setShowCopy}: ImageCardProps) {
 	const [imageUrl, setImageUrl] = useState("");
 
 	useLayoutEffect(() => {
-		setImageUrl(
-			`${window.location.protocol}//${window.location.host}/uploads/${imageName}`
-		);
+		setImageUrl(`${window.location.protocol}//${window.location.host}/api/${imageName}`);
 	}, [imageName]);
 
 	async function copyLink(link: string) {
@@ -35,7 +33,7 @@ export default function ImageCard({imageName, setShowCopy}: ImageCardProps) {
 			<Image
 				width={338}
 				height={224.4}
-				src={`/uploads/${imageName}`}
+				src={`/api/${imageName}`}
 				alt="loaded Image"
 				objectFit="contain"
 				priority

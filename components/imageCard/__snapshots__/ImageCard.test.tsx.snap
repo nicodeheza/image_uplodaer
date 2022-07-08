@@ -78,8 +78,8 @@ exports[`ImageCard component snapshot 1`] = `
       decoding="async"
       onError={[Function]}
       onLoad={[Function]}
-      src="/_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=750&q=75"
-      srcSet="/_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=384&q=75 1x, /_next/image?url=%2Fuploads%2FChuck-Norris.jpg&w=750&q=75 2x"
+      src="/_next/image?url=%2Fapi%2FChuck-Norris.jpg&w=750&q=75"
+      srcSet="/_next/image?url=%2Fapi%2FChuck-Norris.jpg&w=384&q=75 1x, /_next/image?url=%2Fapi%2FChuck-Norris.jpg&w=750&q=75 2x"
       style={
         Object {
           "border": "none",
@@ -93,7 +93,7 @@ exports[`ImageCard component snapshot 1`] = `
           "maxWidth": "100%",
           "minHeight": "100%",
           "minWidth": "100%",
-          "objectFit": undefined,
+          "objectFit": "contain",
           "objectPosition": undefined,
           "padding": 0,
           "position": "absolute",
@@ -111,7 +111,7 @@ exports[`ImageCard component snapshot 1`] = `
       className="urlContainer"
     >
       <p>
-        http://localhost/uploads/Chuck-Norris.jpg
+        http://localhost/api/Chuck-Norris.jpg
       </p>
     </div>
     <button
