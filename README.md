@@ -11,10 +11,10 @@
     <a href="https://nico-deheza-image-uploader.herokuapp.com/">
       Demo
     </a>
-    <!-- <span> | </span> -->
-    <!-- <a href="https://{your-url-to-the-solution}">
+    <span> | </span>
+    <a href="https://devchallenges.io/solutions/2npKCpKyKExxbG8Q3yzQ">
       Solution
-    </a> -->
+    </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/O2iGT9yBd6xZBrOcVirx">
       Challenge
